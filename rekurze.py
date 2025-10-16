@@ -1,3 +1,5 @@
+from cviceni3 import while_enumerate
+
 def faktorial(n):
     # funkce vypocita faktorial:
     # 0! -> 1
@@ -16,6 +18,10 @@ def faktorial2(n):
     for i in range(1, n + 1):
         result *= i
     return result
+
+
+def nova_funkce():
+    while_enumerate()
 
 
 if __name__ == "__main__":
