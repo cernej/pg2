@@ -1,15 +1,28 @@
+def intersection(monzina1, mnozina2):
+    result = set()
+    for x in monzina1:
+        if x in mnozina2:
+            result.add(x)
+    return result
+
+def union(mnozina1, mnozina2):
+    result = set(mnozina1)
+    for x in mnozina2:
+        result.add(x)
+    return result
+
 def jaccardova_vzdalenost_mnozin(mnozina1, mnozina2):
     """
     Jaccardova vzdalenost říká, jak jsou dvě množiny rozdílné, 0 znamená, že jsou stejné, 1 znamená, že jsou zcela rozdílné
     """
     mnozina1 = set(mnozina1)
     mnozina2 = set(mnozina2)
-    intersection = mnozina1.intersection(mnozina2)
-    union = mnozina1.union(mnozina2)
-    index = len(intersection) / len(union)
+    prunik = intersection(mnozina1, mnozina2)
+    #prunik = mnozina1.intersection(mnozina2)
+    sjednoceni = union(mnozina1, mnozina2)
+    #sjednoceni = mnozina1.union(mnozina2)
+    index = len(prunik) / len(sjednoceni)
     return 1 - index
-
-
 
 
 if __name__ == "__main__":
