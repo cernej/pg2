@@ -7,22 +7,7 @@ def deduplikace_dotazu(dotazy):
     tato funkce spocita jaccardovu vzdalenost a levensteinovu vzadelnost a vyradi z seznamu dotazy, polozky, ktere budou mit
     jaccardovu vzdalenost mensi nez 0.5 a levensteinovu vzdalenost <= 1
     """
-    i = 0
-    while i < len(dotazy):
-        j = i + 1
-        while j < len(dotazy):
-            jaccard = jaccardova_vzdalenost_mnozin(dotazy[i]["serp"], dotazy[j]["serp"])
-            levenstein = levensteinova_vzdalenost(dotazy[i]["dotaz"], dotazy[j]["dotaz"])
-            if jaccard < 0.5:
-                print(f"Remove query {dotazy[j]["dotaz"]} because of jaccard distance {jaccard}")
-                dotazy.pop(j)
-            elif levenstein <= 1:
-                print(f"Remove query {dotazy[j]["dotaz"]} because of levenstein distance {levenstein}")
-                dotazy.pop(j)
-            else:
-                j += 1
-        i += 1
-    return dotazy
+    return []
 
 
 
