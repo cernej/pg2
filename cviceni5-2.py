@@ -12,7 +12,36 @@ def nacti_csv(soubor):
 
 
 def spoj_data(data1, data2):
-    pass
+    head1, *data1 = data1
+    head2, *data2 = data2
+
+    #head = set(head1)
+    #head.update(head2)
+    head = list(dict.fromkeys(head1 + head2))
+
+    data = {}
+    for row in data1:
+        jmeno_prijmeni = (row[0], row[1])
+        data[jmeno_prijmeni] = {}
+        for k,v in zip(head1, row):
+            data[jmeno_prijmeni][k] = v
+    for row in data2:
+        jmeno_prijmeni = (row[0], row[1])
+        if jmeno_prijmeni not in data:
+            data[jmeno_prijmeni] = {}
+        for k,v in zip(head2, row):
+            data[jmeno_prijmeni][k] = v
+
+    output = [head]
+    for v in data.values():
+        row = []
+        for h in head:
+            row.append(v.get(h))
+        output.append(row)
+    return output
+        
+
+
 
 
 def zapis_csv(soubor, data):
