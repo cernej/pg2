@@ -13,6 +13,10 @@ def inkrementuj_cisla(data):
         results.append(','.join(row))
     return results
 
+def zapis(file_name, data):
+    with open(file_name, "w") as file:
+        for line in data:
+            file.write(line + '\n')
 
 if __name__ == "__main__":
 
@@ -20,15 +24,15 @@ if __name__ == "__main__":
         print(f'Pouziti: python {sys.argv[0]} jmeno_souboru')
         sys.exit()
 
-    file_name = sys.argv[1]
+    file_name = sys.argv[1]  # data.csv
     data = []
 
     with open(file_name, "r") as file:
         for line in file:
             data.append(line.strip())
-
-    print(data)  # ['Alice,25,student', 'Bob,22,pracujici']
-
     data = inkrementuj_cisla(data)
 
-    print(data)  # ['Alice,26,student', 'Bob,23,pracujici']
+    name = file_name.split('.')  #  name = ['data', 'csv']
+
+    file_name2 = name[0] + '2.' + name[1]  #  'data2.csv'
+    zapis(file_name2, data)
