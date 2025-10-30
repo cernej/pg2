@@ -1,7 +1,18 @@
 import sys
 
 def inkrementuj_cisla(data):
-    return data
+    results = []
+    for value in data:
+        row = []
+        for x in value.split(','):
+            try:
+                x = str(int(x) + 1)
+            except ValueError:
+                pass
+            row.append(x)
+        results.append(','.join(row))
+    return results
+
 
 if __name__ == "__main__":
 
@@ -21,5 +32,3 @@ if __name__ == "__main__":
     data = inkrementuj_cisla(data)
 
     print(data)  # ['Alice,26,student', 'Bob,23,pracujici']
-
-    value = int(value) + 1
