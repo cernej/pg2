@@ -26,12 +26,12 @@ if __name__ == "__main__":
     
     ts = time.time()
     
-    #hraci_automat()
+    hraci_automat()
 
-    print('Jdu spat...')
-    time.sleep(5)
-    print('... pokracuju')
+    # print('Jdu spat...')
+    # time.sleep(5)
+    # print('... pokracuju')
 
-    print(f'Program bezel: {(time.time() - ts)} s')
+    # print(f'Program bezel: {(time.time() - ts)} s')
 
 
