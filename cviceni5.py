@@ -27,9 +27,13 @@ if __name__ == "__main__":
     file_name = sys.argv[1]  # data.csv
     data = []
 
-    with open(file_name, "r") as file:
-        for line in file:
-            data.append(line.strip())
+    try:
+        with open(file_name, "r") as file:
+            for line in file:
+                data.append(line.strip())
+    except FileNotFoundError:
+        print(f'Soubor {file_name} neexistuje')
+        
     data = inkrementuj_cisla(data)
 
     name = file_name.split('.')  #  name = ['data', 'csv']

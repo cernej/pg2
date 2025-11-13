@@ -1,0 +1,2 @@
+Alice,27,student
+Bob,24,pracujici
