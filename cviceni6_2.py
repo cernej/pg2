@@ -18,7 +18,8 @@ def download_rates(url):
         fields = line.split('|')
         if len(fields) < 5:
             continue
-        rates[fields[3]] = float(fields[4].replace(',', '.'))
+        multiplicator = int(fields[2])
+        rates[fields[3]] = float(fields[4].replace(',', '.')) / multiplicator
 
     return date, rates
 
