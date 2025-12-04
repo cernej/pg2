@@ -1,5 +1,5 @@
 def prevod_c_na_f(stupne):
-    return stupne * 9 / 5 + 32
+    return 0
 
 
 def test_prevod_c_na_f():
