@@ -13,7 +13,20 @@ def spocitej_statistiku(text):
     pocet_slov = 0
     pocet_znaku = 0
 
-    # Vaše řešení zde
+    for c in text:
+        pocet_znaku += 1
+        if c == '\n':
+            pocet_radku += 1
+            pocet_slov += 1
+        if c == ' ':
+            pocet_slov += 1     
+    
+    if pocet_znaku > 0:
+        pocet_radku += 1
+
+    # pocet_radku = len(text.split('.'))
+    # pocet_slov = len(text.split())
+    # pocet_znaku = len(text)
 
     return pocet_radku, pocet_slov, pocet_znaku
 
