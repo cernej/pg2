@@ -6,7 +6,32 @@
 def filtruj_cisla(typ, cisla):
     vysledek = []
 
-    # Vaše řešení zde
+    for c in cisla:
+        if typ == "kladna" and c > 0:
+            vysledek.append(c)
+        elif typ == "zaporna" and c < 0:
+            vysledek.append(c)
+        elif typ == "suda" and c % 2 == 0:
+            vysledek.append(c)
+        elif typ == "licha" and c % 2 != 0:
+            vysledek.append(c)
+
+    # if typ == "kladna":
+    #     for c in cisla:
+    #         if c > 0:
+    #             vysledek.append(c)
+    # elif typ == "zaporna":
+    #     for c in cisla:
+    #         if c < 0:
+    #             vysledek.append(c)
+    # elif typ == "suda":
+    #     for c in cisla:
+    #         if c % 2 == 0:
+    #             vysledek.append(c)
+    # elif typ == "licha":
+    #     for c in cisla:
+    #         if c % 2 != 0:
+    #             vysledek.append(c)
  
     return vysledek
 
